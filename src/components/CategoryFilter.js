@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-function CategoryFilter() {
+
+function CategoryFilter({ categories }) {
+  const [selectedCategory, toggleCategory] = useState("")
+
   return (
     <div className="categories">
       <h5>Category filters</h5>
-      {/* render <button> elements for each category here */}
+      {categories.map((e) => {
+        return <button key={e} onClick={() => toggleCategory(e)} className={selectedCategory === e ? "selected" : ""}>{e}</button>
+      })}
     </div>
   );
 }
