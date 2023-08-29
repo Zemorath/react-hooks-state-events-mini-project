@@ -3,9 +3,9 @@ import Task from "./Task"
 import { v4 as uuid } from "uuid"
 
 
-function TaskList({ tasks, selectedCategory }) {
+function TaskList({ tasks, selectedCategory, list, setList }) {
 
-  const [list, setList] = useState(tasks)
+  // const [list, setList] = useState(tasks)
 
   function handleClick(e) {
     const newList = list.filter((l) => l.text !== e);

@@ -9,13 +9,14 @@ import { CATEGORIES, TASKS } from "../data";
 
 function App() {
   const [selectedCategory, toggleCategory] = useState("All")
+  const [list, setList] = useState(TASKS)
 
   return (
     <div className="App">
       <h2>My tasks</h2>
       <CategoryFilter categories={CATEGORIES} tasks={TASKS} selectedCategory={selectedCategory} toggleCategory={toggleCategory} />
-      <NewTaskForm />
-      <TaskList tasks={TASKS} selectedCategory={selectedCategory}/>
+      <NewTaskForm categories={CATEGORIES} tasks={TASKS} list={list} setList={setList}/>
+      <TaskList tasks={TASKS} selectedCategory={selectedCategory} list={list} setList={setList}/>
     </div>
   );
 }
