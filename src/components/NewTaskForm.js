@@ -14,7 +14,7 @@ function NewTaskForm({ categories, list, setList }) {
     changeText(e.target.value)
   }
 
-  function handleFormSubmit(event) {
+  function onTaskFormSubmit(event) {
     event.preventDefault();
     const newItem = {
       id: uuid(),
@@ -39,7 +39,7 @@ function NewTaskForm({ categories, list, setList }) {
           })}
         </select>
       </label>
-      <input type="submit" value="Add task" onClick={handleFormSubmit}/>
+      <input type="submit" value="Add task" onClick={onTaskFormSubmit}/>
     </form>
   );
 }

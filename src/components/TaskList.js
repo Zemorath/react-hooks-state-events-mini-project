@@ -3,7 +3,7 @@ import Task from "./Task"
 import { v4 as uuid } from "uuid"
 
 
-function TaskList({ tasks, selectedCategory, list, setList }) {
+function TaskList({ selectedCategory, list, setList }) {
 
   // const [list, setList] = useState(tasks)
 
