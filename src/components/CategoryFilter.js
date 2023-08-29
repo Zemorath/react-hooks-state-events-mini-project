@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 
-function CategoryFilter({ categories }) {
-  const [selectedCategory, toggleCategory] = useState("")
+function CategoryFilter({ categories, toggleCategory, selectedCategory }) {
+
+  function handleCategoryChange(e) {
+    toggleCategory(e.target.textContent)
+  }
 
   return (
     <div className="categories">
       <h5>Category filters</h5>
       {categories.map((e) => {
-        return <button key={e} onClick={() => toggleCategory(e)} className={selectedCategory === e ? "selected" : ""}>{e}</button>
+        return <button key={e} onClick={handleCategoryChange} className={selectedCategory === e ? "selected" : ""}>{e}</button>
       })}
     </div>
   );

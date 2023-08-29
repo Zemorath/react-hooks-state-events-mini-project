@@ -3,7 +3,7 @@ import Task from "./Task"
 import { v4 as uuid } from "uuid"
 
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, selectedCategory }) {
 
   const [list, setList] = useState(tasks)
 
@@ -12,14 +12,11 @@ function TaskList({ tasks }) {
     setList(newList)
   }
 
-  const activeCategory = document.querySelector(".selected")
-
-  
   const itemsToDisplay = list.filter((item) => {
-    if (activeCategory == "All" || activeCategory == null) {
+    if (selectedCategory == 'All') {
       return true
     } else {
-      return item.category == activeCategory
+      return item.category == selectedCategory;
     }
   })
 
